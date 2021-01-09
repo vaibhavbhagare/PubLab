@@ -1,0 +1,25 @@
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.bg-white{
+  background-color: #fff;
+}
+.bt-box{
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+.pd-30{
+  padding: 30px;
+}
+.fs-13{
+  font-size: 13px;
+}

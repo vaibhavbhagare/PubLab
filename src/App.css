@@ -1,4 +1,7 @@
 .App {
+  /*text-align: center;*/
+}
+.center{
   text-align: center;
 }
 
@@ -35,4 +38,84 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navy {
+  color: #00022d;
+}
+
+.round-border{
+  border: 2px solid rgba(0,0,0,.125) !important;
+}
+
+.round-border:hover, .round-border:active{
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.411);
+}
+.fw-6{
+  font-weight: 600;
+}
+
+.grey{
+  color: rgba(26,26,26,.75);
+}
+.card{
+  border-radius: 1.25rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .desk-view{
+    margin: auto;
+    width: 30%;
+    padding: 10px;
+  }
+}
+.card-title, .pd-unset{
+  padding: unset;
+  margin: unset !important;
+}
+.sm-card{
+  border-radius: 0.75rem !important;
+}
+.sm-text-1{
+  color: #fff;
+  font-size: 1rem;
+}
+.sm-text-2{
+  color: rgb(255 255 255 / 58%);
+}
+.sm-card-body{
+  padding: 3px 10px 0px 10px !important;
+}
+.fw-5{
+  font-weight: 500 !important;
+  min-width: 150px;
+  border-radius: 0.75rem !important;
+}
+.sm-send-btn{
+  color:#007bff !important;
+  background-color: #d6e0ea !important;
+}
+.font-size-12{
+  font-size: 12px;
+}
+.sm-checkbox{
+  color:#007bff !important;
+  font-weight: 500;
+}
+.indexTitle{
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+.top-card-title{
+  height: 40px;
+}
+.patientCard {
+  background: aliceblue;
+}
+.patientCard .card{
+  border: unset;
+  border-radius: 30px;
 }
