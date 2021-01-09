@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import Login from './components/Login';
+import AddUser from './components/AddUser';
 import PatientIndex from './components/PatientIndex';
 import {
   BrowserRouter as Router,
@@ -19,13 +20,16 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
-          <Route path="/index">
+          <Route path="/AddUser">
+            <AddUser/>
+          </Route>
+          <Route path="/">
             <PatientIndex/>
           </Route>
           <Route path="/addPatient">
             <AddPatient/>
           </Route>
-          <Route path="/">
+          <Route path="/user">
             <SelectUser/>
           </Route>
         </Switch>        
