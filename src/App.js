@@ -2,7 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import Login from './components/Login';
-import PatientIndex from './components/PatientInex';
+import PatientIndex from './components/PatientIndex';
 import {
   BrowserRouter as Router,
   Switch,
