@@ -4,15 +4,29 @@ import Button from "react-bootstrap/Button";
 import "./Login.css";
 import logo from '../logo.svg';
 import { Card } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+import Login from '../components/Login';
 
 export default function SelectUser() {
-  const history = useHistory();
 
-  function handleClick() {
-    history.push("/login");
-  }
+  //1.Super User
+  //2.data logger
+  const [selectedTab, setSelectedTab] = useState(1);
 
+  const [showLogin, setShowLogin] = useState(false);
+
+  return (
+    <React.Fragment>
+      {
+        !showLogin  ?
+          <SelectUserView selectedTab={selectedTab} setSelectedTab={setSelectedTab} setShowLogin={ setShowLogin} />
+          :
+          <Login role ={selectedTab === 1 ? "admin" : "data logger"} />
+      }
+    </React.Fragment>
+    );
+}
+
+const SelectUserView = ({selectedTab, setSelectedTab, setShowLogin}) => {
   return (
     <div className="center electUser bg-primary">
       <div className="center mt-5 mb-5">
@@ -23,7 +37,7 @@ export default function SelectUser() {
           <h4>Login your account as a</h4>
         </div>
         <div className="parentCard desk-view">
-          <Card className="m-3 round-border">
+          <Card className={selectedTab === 1 ? "m-3 round-border active": "m-3 round-border"} onClick={()=>{setSelectedTab(1)}}>
             <Card.Body>
               <Card.Title className="navy">Super admin</Card.Title>
               <Card.Text className="nav-link fw-6 grey fs-13">
@@ -31,7 +45,7 @@ export default function SelectUser() {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="m-3 round-border">
+          <Card className={selectedTab === 2 ? "m-3 round-border active": "m-3 round-border"} onClick={()=>{setSelectedTab(2)}}>
             <Card.Body>
               <Card.Title className="navy">Data logger</Card.Title>
               <Card.Text className="nav-link fw-6 grey fs-13">
@@ -40,7 +54,7 @@ export default function SelectUser() {
             </Card.Body>
           </Card>
 
-          <Button className="mt-5" block size="lg" type="submit" onClick={()=>{handleClick()}}>
+          <Button className="mt-5" block size="lg" type="submit" onClick={()=>{setShowLogin(true)}}>
             Next
         </Button>
           <br/>

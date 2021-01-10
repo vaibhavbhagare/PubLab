@@ -14,6 +14,7 @@ const AddPatient = () => {
         {healthConditions()}
         {labConfirmation()}
         {laboratoryUserOnly()}
+        {/*button*/}
         </div>
       </React.Fragment>
   );

@@ -5,7 +5,7 @@ import "./Login.css";
 import firebase from "../firebase/firebase";
 import { useHistory } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ role}) {
   const history = useHistory();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -38,9 +38,7 @@ export default function Login() {
     } else {
       emailNew = email + '@pro-optics.com';
     }
-console.log()
     try {
-      console.log('here', emailNew, password)
       firebase.auth().signInWithEmailAndPassword(emailNew, password)
       .then((user) => {
         history.push("/");
@@ -60,7 +58,7 @@ console.log()
   return (
     <div className="Login">
       <div className="center mt-5">
-        <h4>Login as a Super admin</h4>
+        <h4>Login as a {role}</h4>
       </div>
       <Form onSubmit={onSubmit} className="mt-5 p-4">
         <Form.Group size="lg" controlId="email">
