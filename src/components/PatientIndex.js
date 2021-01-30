@@ -1,25 +1,18 @@
 import React from "react";
 import PatientCard from "../view/PatientCard"
 import FirebaseContext from '../firebase/context';
-import { useHistory } from "react-router-dom";
 
-const PatientIndex = (props) => {
-  const history = useHistory();
+const PatientIndex = ({ history, match }) => {
 
+console.log(history, match)
 const { currentUser } = React.useContext(FirebaseContext);
-console.log("currentUser p",currentUser)
-  
 
-   React.useEffect(() => {
-     if (currentUser) {
-       const { role } = currentUser;
-       if (role !== 'admin') {
-         history.push('/');
-       }
-     } else {
-       history.push('/sign-in');
-     }
-   }, [currentUser, history]);
+  //React.useEffect(() => {
+  //  console.log(4)
+  //   if (!currentUser) {
+  //     history.push('/sign-in');
+  //   }
+  // }, [currentUser, history]);
 
   return (
     <div className="PatientIndex">

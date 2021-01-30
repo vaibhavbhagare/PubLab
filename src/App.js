@@ -13,7 +13,6 @@ import useAuth from './utils/useAuth';
 import { auth, firestore, FirebaseContext } from './firebase/firebase';
 
 function App() {
-  debugger;
   const currentUser = useAuth();
   console.log(currentUser)
   return (
@@ -21,15 +20,9 @@ function App() {
       <div className="App">
         <Router>
           <Switch>
-              <Route path="/sign-in">
-                <SelectUser/>
-              </Route>
-              <Route path="/AddUser">
-                <AddUser/>
-              </Route>
-              <Route path="/">
-                <PatientIndex/>
-              </Route>
+              <Route exact path="/" component={PatientIndex}/>
+              <Route exact path="/sign-in"  component={SelectUser}/>
+              <Route exact path="/AddUser" component={SelectUser}/>
             </Switch>        
       </Router>
     </div>
