@@ -1,30 +1,30 @@
 import React from "react";
-import PatientCard from "../view/PatientCard"
-import FirebaseContext from '../firebase/context';
+import CustomerCard from "../view/CustomerCard";
+import FirebaseContext from "../firebase/context";
+import { Link, Router } from "react-router-dom";
 
 const PatientIndex = ({ history, match }) => {
-
-console.log(history, match)
-const { currentUser } = React.useContext(FirebaseContext);
-
-  //React.useEffect(() => {
-  //  console.log(4)
-  //   if (!currentUser) {
-  //     history.push('/sign-in');
-  //   }
-  // }, [currentUser, history]);
-
+  const { currentUser } = React.useContext(FirebaseContext);
   return (
     <div className="PatientIndex">
-      <div className="bg-primary top-card-title">
-        <span className="indexTitle pl-3">Patient record</span>
-        <span className="float-right indexTitle pr-2">
-          <i className="fa fa-search" aria-hidden="true"></i>&nbsp;&nbsp;
-          <i className="fa fa-sliders" aria-hidden="true"></i>
-        </span>
+      <div className="patientCard desk-view">
+        <div class="row mt-1">
+          <button
+            style={{ marginLeft: "80%" }}
+            class="btn btn-danger btn-sm navbar-btn"
+            onClick={() => {
+              history.push("/add");
+            }}
+          >
+            <Link to="/add" style={{ color: "#fff" }}>
+              Add <i class="fa fa-plus" aria-hidden="true"></i>
+            </Link>
+          </button>
+        </div>
+        <CustomerCard />
       </div>
-      <PatientCard/>
-    </div> );
-}
- 
+    </div>
+  );
+};
+
 export default PatientIndex;

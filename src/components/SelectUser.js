@@ -16,12 +16,7 @@ export default function SelectUser() {
 
   return (
     <React.Fragment>
-      {
-        !showLogin  ?
-          <SelectUserView selectedTab={selectedTab} setSelectedTab={setSelectedTab} setShowLogin={ setShowLogin} />
-          :
-          <Login role ={selectedTab === 1 ? "admin" : "data logger"} />
-      }
+      <Login role ={selectedTab === 1 ? "admin" : "data logger"} />
     </React.Fragment>
     );
 }
